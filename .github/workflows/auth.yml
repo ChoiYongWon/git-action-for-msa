@@ -1,0 +1,20 @@
+name: "auth"
+
+on:
+  push:
+    # run the workflow only on changes
+    # to the auth route and auth workflow
+    paths:
+      - "auth/**"
+      - ".github/workflows/auth.yaml"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      # run tests for route
+      - name: Run ls
+        run: |-
+          ls
